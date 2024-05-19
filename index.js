@@ -3,7 +3,7 @@ const app = express()
   require("dotenv").config();
 const cors = require("cors")
 
-const port = 3000
+const port = process.env.PORT || 3000
 
 app.get("/",(req,res)=>{
     res.send("ldskslhkldk klsdkglk kdslkhlk llskhlk")

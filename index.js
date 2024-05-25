@@ -5,11 +5,11 @@ const app = express()
   const connectwithmongo = require("./MongoDB/Mongo")
 const cors = require("cors");
  /// medleware
- var corsOptions = {
-  origin: 'http://localhost:5173',
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}
-app.use(cors(corsOptions))
+//  var corsOptions = {
+//   origin: '*',
+//   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+// }
+app.use(cors())
  app.use(express.json())
  app.use(express.urlencoded({extended:true}))
 

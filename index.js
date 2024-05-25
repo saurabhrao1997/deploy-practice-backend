@@ -4,6 +4,8 @@ const app = express()
   require("dotenv").config();
   const connectwithmongo = require("./MongoDB/Mongo")
 const cors = require("cors");
+
+const port = parseInt(process.env.PORT)  || 3000
  /// medleware
 //  var corsOptions = {
 //   origin: '*',
@@ -13,7 +15,7 @@ app.use(cors())
  app.use(express.json())
  app.use(express.urlencoded({extended:true}))
 
-const port = process.env.PORT || 3000
+;
 
 const registerSchema = mongoose.Schema({
   email:String,

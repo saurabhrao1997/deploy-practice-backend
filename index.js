@@ -5,7 +5,7 @@ const app = express()
   const connectwithmongo = require("./MongoDB/Mongo")
 const cors = require("cors");
 
-const port = parseInt(process.env.PORT)  || 3000
+const port = process.env.BASE_URL  || 3000
  /// medleware
 //  var corsOptions = {
 //   origin: '*',
@@ -27,7 +27,19 @@ const registerSchema = mongoose.Schema({
 })
 
 const Register =  mongoose.model("register",registerSchema)
-
+app.get("/getusers",async(req,res)=>{
+  try {
+    const allUser = await Register.find({})
+    console.log("allUser",allUser)
+    if(!allUser){
+    return  res.status(204).json({message:"no user Found"})
+    }
+    res.status(200).json({data: allUser})   
+    
+  } catch (error) {
+    console.log("sallgklka",error)
+  }
+})
 
 app.post("/register",(req,res)=>{
   console.log("req",req.body)
@@ -42,6 +54,8 @@ app.post("/register",(req,res)=>{
   } catch (error) {
     res.status(400).json("some thing went wrong",error)
   }
+
+ 
 
 
 

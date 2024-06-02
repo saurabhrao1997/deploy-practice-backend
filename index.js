@@ -5,7 +5,7 @@ const app = express()
   const connectwithmongo = require("./MongoDB/Mongo")
 const cors = require("cors");
 
-const port = process.env.BASE_URL  || 3000;
+const port = process.env.PORT  || 3000;
  /// medleware
 //  var corsOptions = {
 //   origin: '*',

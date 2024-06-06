@@ -28,17 +28,18 @@ const registerSchema = mongoose.Schema({
 
 const Register =  mongoose.model("register",registerSchema)
 app.get("/getusers",async(req,res)=>{
-  try {
-    const allUser = await Register.find({})
-    console.log("allUser",allUser)
-    if(!allUser){
-    return  res.status(204).json({message:"no user Found"})
-    }
-    res.status(200).json({data: allUser})   
+  res.send("ksflsaklkalkglkalgk")
+  // try {
+  //   const allUser = await Register.find({})
+  //   console.log("allUser",allUser)
+  //   if(!allUser){
+  //   return  res.status(204).json({message:"no user Found"})
+  //   }
+  //   res.status(200).json({data: allUser})   
     
-  } catch (error) {
-    console.log("sallgklka",error)
-  }
+  // } catch (error) {
+  //   console.log("sallgklka",error)
+  // }
 })
 
 app.post("/register",(req,res)=>{
